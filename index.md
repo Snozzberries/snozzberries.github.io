@@ -1,5 +1,3 @@
-Here you can say lots of fun things about your site.
+Some short ramblings about PowerShell, Azure, Windows, AWS, M365, and other things.
 
-Maybe say a some things about yourself.
-
-Or maybe what you plan to blog about.
+Feel free to reach out
