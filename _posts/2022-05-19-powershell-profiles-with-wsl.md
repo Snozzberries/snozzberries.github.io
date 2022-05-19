@@ -23,7 +23,7 @@ One of the first ways that the shell changes is if the last command exits with a
 
 The last command exited with an error.
 
-Another frequent change is the operating system indicator. Having the same shell experience across platforms is a really cool benefit, but making sure you know which you are on can still help prevent confusion. In Windows we show the Windows flag icon and in Windows Subsystem for Linux (WSL) we show the Linux Distributions icon.
+Another frequent change is the operating system indicator. Having the same shell experience across platforms is a really cool benefit, but making sure you know which you are on helps prevent confusion. In Windows we show the Windows flag icon and in Windows Subsystem for Linux (WSL) we show the Linux Distribution's icon.
 
 ![The Windows prompt.](https://raw.githubusercontent.com/Snozzberries/snozzberries.github.io/main/assets/powershell-profiles-with-wsl/Untitled%202.png)
 
@@ -33,7 +33,7 @@ The Windows prompt.
 
 The Ubuntu prompt in WSL.
 
-The profile also loads a few PowerShell modules that are nice to haves. Below is an example of the PSReadLine module. This provides automatic pattern matching against the shell’s command history, and recently added completion suggestions as a new provider.
+The profile also loads a few PowerShell modules that are nice to haves. Below is an example of the PSReadLine module. This provides automatic pattern matching against the shell’s command history, and, recently added, completion suggestions as a new provider.
 
 ![Example of PSReadLine with command history and completion suggestions.](https://raw.githubusercontent.com/Snozzberries/snozzberries.github.io/main/assets/powershell-profiles-with-wsl/Untitled%204.png)
 
@@ -47,7 +47,7 @@ Example of Terminal Icons.
 
 # How does it all work?
 
-Lets walk through how some of how the background work the profile is doing, some of the influences, and some of the drawbacks now.
+Lets walk through some of the background work the profile is doing, some of the influences, and some of the drawbacks now.
 
 ## What are you doing?
 
@@ -67,9 +67,9 @@ if ($IsLinux)
 }
 ```
 
-The next check the profile looks for is a couple of dependencies that require operating specific procedures to validate. These sections both verify that the CaskaydiaCove Nerd Font family is available and that Oh My Posh is installed.
+The next check the profile looks for is a couple of dependencies that require operating system specific procedures to validate. These sections both verify that the CaskaydiaCove Nerd Font family is available and that Oh My Posh is installed.
 
-The font family provides all the beautiful icons that provide the great context in the prompt and shell. Oh My Posh allows us to dynamically change the shell’s prompt given different configurations.
+The font family provides all the beautiful icons for the great context in the prompt and shell. Oh My Posh allows us to dynamically change the shell’s prompt given different configurations.
 
 In Linux we also define an environment variable in PowerShell for temporary files, and will perform an install of Oh My Posh if it is not found.
 
@@ -135,7 +135,7 @@ The full profile file is available on my [GitHub](https://github.com/Snozzberrie
 
 There are a few extra steps needed for this to work seamlessly with WSL. All of this content is also on my GitHub in the same repository for reference.
 
-Installing PowerShell in WSL requires a few extra steps, but nothing to crazy. You just need to install the LIBSSL dependencies and then install the latest version of PowerShell.
+Installing PowerShell in WSL requires a few extra steps, but nothing too crazy. You just need to install the LIBSSL dependencies and then install the latest version of PowerShell.
 
 ```bash
 # https://packages.ubuntu.com/focal/libssl1.1
@@ -151,7 +151,7 @@ Once PowerShell is installed we map a few paths in WSL to the Windows paths to m
 
 1. The first is mapping our Linux Git directory to the Windows Git local working directory. This makes all our local repos stay in the same physical path on the disk. 
 2. Next we map the PowerShell profile in Windows into the Linux PowerShell profile path so we don’t need to maintain this independently.
-3. Last two commands we use to download a font configuration file that maps all the Windows fonts into Linux and we install the Fontconfig library so we can manage those new fonts.
+3. The last two commands we use to download a font configuration file that maps all the Windows fonts into Linux and we install the Fontconfig library so we can manage those new fonts.
 
 ```bash
 # Install PowerShell
