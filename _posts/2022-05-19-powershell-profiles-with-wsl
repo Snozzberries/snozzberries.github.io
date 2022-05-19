@@ -11,7 +11,7 @@ There are a few major components to my shell prompt currently.
 3. If the current folder is a Git repository, it will include that Git Status
 4. The status of the last exit code
 
-![Working on Windows, in the *managedAdcs* folder, which currently has a new untracked file, and the last exit code was not an error.](PowerShell%20Profiles%20with%20Windows%20Subsystem%20for%20Lin%20bd28cc664b39473281e7a67ad4c20b47/Untitled.png)
+![Working on Windows, in the *managedAdcs* folder, which currently has a new untracked file, and the last exit code was not an error.](https://raw.githubusercontent.com/Snozzberries/snozzberries.github.io/main/assets/powershell-profiles-with-wsl/Untitled.png)
 
 Working on Windows, in the *managedAdcs* folder, which currently has a new untracked file, and the last exit code was not an error.
 
@@ -19,29 +19,29 @@ Working on Windows, in the *managedAdcs* folder, which currently has a new untra
 
 One of the first ways that the shell changes is if the last command exits with a non-zero error code. This is mainly helpful when working with very verbose commands that output a lot of information or those that catch the errors and don’t provide the explicit error itself.
 
-![The last command exited with an error.](PowerShell%20Profiles%20with%20Windows%20Subsystem%20for%20Lin%20bd28cc664b39473281e7a67ad4c20b47/Untitled%201.png)
+![The last command exited with an error.](https://raw.githubusercontent.com/Snozzberries/snozzberries.github.io/main/assets/powershell-profiles-with-wsl/Untitled%201.png)
 
 The last command exited with an error.
 
 Another frequent change is the operating system indicator. Having the same shell experience across platforms is a really cool benefit, but making sure you know which you are on can still help prevent confusion. In Windows we show the Windows flag icon and in Windows Subsystem for Linux (WSL) we show the Linux Distributions icon.
 
-![The Windows prompt.](PowerShell%20Profiles%20with%20Windows%20Subsystem%20for%20Lin%20bd28cc664b39473281e7a67ad4c20b47/Untitled%202.png)
+![The Windows prompt.](https://raw.githubusercontent.com/Snozzberries/snozzberries.github.io/main/assets/powershell-profiles-with-wsl/Untitled%202.png)
 
 The Windows prompt.
 
-![The Ubuntu prompt in WSL.](PowerShell%20Profiles%20with%20Windows%20Subsystem%20for%20Lin%20bd28cc664b39473281e7a67ad4c20b47/Untitled%203.png)
+![The Ubuntu prompt in WSL.](https://raw.githubusercontent.com/Snozzberries/snozzberries.github.io/main/assets/powershell-profiles-with-wsl/Untitled%203.png)
 
 The Ubuntu prompt in WSL.
 
 The profile also loads a few PowerShell modules that are nice to haves. Below is an example of the PSReadLine module. This provides automatic pattern matching against the shell’s command history, and recently added completion suggestions as a new provider.
 
-![Example of PSReadLine with command history and completion suggestions.](PowerShell%20Profiles%20with%20Windows%20Subsystem%20for%20Lin%20bd28cc664b39473281e7a67ad4c20b47/Untitled%204.png)
+![Example of PSReadLine with command history and completion suggestions.](https://raw.githubusercontent.com/Snozzberries/snozzberries.github.io/main/assets/powershell-profiles-with-wsl/Untitled%204.png)
 
 Example of PSReadLine with command history and completion suggestions.
 
 The profile imports the Terminal-Icons module as well, just to add a little more visual fun to the experience.
 
-![Example of Terminal Icons.](PowerShell%20Profiles%20with%20Windows%20Subsystem%20for%20Lin%20bd28cc664b39473281e7a67ad4c20b47/Untitled%205.png)
+![Example of Terminal Icons.](https://raw.githubusercontent.com/Snozzberries/snozzberries.github.io/main/assets/powershell-profiles-with-wsl/Untitled%205.png)
 
 Example of Terminal Icons.
 
