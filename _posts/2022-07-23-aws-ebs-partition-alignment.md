@@ -6,7 +6,7 @@ Testing performed with Crystal DiskMark 8.0.4 64-bit in Windows Server 2022 on a
 
 ## Analysis
 | Test | System Default (MB/s) | 4 KiB (MB/s) | 4000 KiB (MB/s) | 16 KiB (MB/s) | Default (MB/s) | Best (MB/s) | Worst (MB/s) | Delta (%) |
-|---|---|---|---|---|---|---|---|---|
+| - | - | - | - | - | - | - | - | - |
 | Sequential 1 MiB Read with 8 queues & 1 threads | 137.77 | 137.39 | 137.72 | 138.81 | 138.18 | 138.81 | 137.39 | 1 |
 | Sequential 1 Mib Read with 1 queues & 1 threads | 137.13 | 137.37 | 136.96 | 137.15 | 137.34 | 137.37 | 136.96 | 0 |
 | Random 4 KiB Read with 32 queues & 1 threads | 12.8 | 12.82 | 12.76 | 12.68 | 12.85 | 12.85 | 12.68 | 1 |
