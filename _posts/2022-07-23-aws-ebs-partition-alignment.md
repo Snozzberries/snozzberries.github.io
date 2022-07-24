@@ -1,7 +1,9 @@
 # AWS EBS Partition Alignment
 
 Within AWS EBS GP2, what is the optimal partition alignment?
+
 Conclusion 4096 Bytes.
+
 Testing performed with Crystal DiskMark 8.0.4 64-bit in Windows Server 2022 on a t3.medium EC2 instance in US-East-1.
 
 ## Analysis
