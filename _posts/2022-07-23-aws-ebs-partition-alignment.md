@@ -5,16 +5,16 @@ Conclusion 4096 Bytes.
 Testing performed with Crystal DiskMark 8.0.4 64-bit in Windows Server 2022 on a t3.medium EC2 instance in US-East-1.
 
 ## Analysis
-| Test                                                 | System <br>Default <br>(MB/s) | 4 KiB <br>(MB/s) | 4000 KiB <br>(MB/s) | 16 KiB <br>(MB/s) | Default <br>(MB/s) | Best <br>(MB/s) | Worst <br>(MB/s) | Delta <br>(%) |
+| Test | System <br>Default <br>(MB/s) | 4 KiB <br>(MB/s) | 4000 KiB <br>(MB/s) | 16 KiB <br>(MB/s) | Default <br>(MB/s) | Best <br>(MB/s) | Worst <br>(MB/s) | Delta <br>(%) |
 |------------------------------------------------------|-------------------------------|------------------|---------------------|-------------------|--------------------|-----------------|------------------|---------------|
-| Sequential 1 MiB Read with <br>8 queues & 1 threads  | 137.77                        | 137.39           | 137.72              | 138.81            | 138.18             | 138.81          | 137.39           | 0.01          |
-| Sequential 1 Mib Read with <br>1 queues & 1 threads  | 137.13                        | 137.37           | 136.96              | 137.15            | 137.34             | 137.37          | 136.96           | 0             |
-| Random 4 KiB Read with <br>32 queues & 1 threads     | 12.8                          | 12.82            | 12.76               | 12.68             | 12.85              | 12.85           | 12.68            | 0.01          |
-| Random 4 KiB Read with <br>1 queues & 1 threads      | 12.63                         | 12.76            | 12.5                | 12.63             | 12.8               | 12.8            | 12.5             | 0.02          |
-| Sequential 1 MiB Write with <br>8 queues & 1 threads | 137.57                        | 140.48           | 138.01              | 138.18            | 137.59             | 140.48          | 137.57           | 0.02          |
-| Sequential 1 Mib Write with <br>1 queues & 1 threads | 137.97                        | 137.78           | 137.37              | 137.14            | 137.77             | 137.97          | 137.14           | 0.01          |
-| Random 4 KiB Write with <br>32 queues & 1 threads    | 12.6                          | 14.09            | 11.3                | 14.3              | 14.69              | 14.69           | 11.3             | 0.3           |
-| Random 4 KiB Write with <br>1 queues & 1 threads     | 4.1                           | 7.18             | 5.89                | 6.39              | 6.88               | 7.18            | 4.1              | 0.75          |
+| Sequential 1 MiB Read with <br>8 queues & 1 threads | 137.77 | 137.39 | 137.72 | 138.81 | 138.18 | 138.81 | 137.39 | 0.01 |
+| Sequential 1 Mib Read with <br>1 queues & 1 threads | 137.13 | 137.37 | 136.96 | 137.15 | 137.34 | 137.37 | 136.96 | 0 |
+| Random 4 KiB Read with <br>32 queues & 1 threads | 12.8 | 12.82 | 12.76 | 12.68 | 12.85 | 12.85 | 12.68 | 0.01 |
+| Random 4 KiB Read with <br>1 queues & 1 threads | 12.63 | 12.76 | 12.5 | 12.63 | 12.8 | 12.8 | 12.5 | 0.02 |
+| Sequential 1 MiB Write with <br>8 queues & 1 threads | 137.57 | 140.48 | 138.01 | 138.18 | 137.59 | 140.48 | 137.57 | 0.02 |
+| Sequential 1 Mib Write with <br>1 queues & 1 threads | 137.97 | 137.78 | 137.37 | 137.14 | 137.77 | 137.97 | 137.14 | 0.01 |
+| Random 4 KiB Write with <br>32 queues & 1 threads | 12.6 | 14.09 | 11.3 | 14.3 | 14.69 | 14.69 | 11.3 | 0.3 |
+| Random 4 KiB Write with <br>1 queues & 1 threads | 4.1 | 7.18 | 5.89 | 6.39 | 6.88 | 7.18 | 4.1 | 0.75 |
 
 ## Default System Drive
 - MBR
