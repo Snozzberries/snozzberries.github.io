@@ -1,10 +1,10 @@
-/h1 AWS EBS Partition Alignment
+# AWS EBS Partition Alignment
 
 Within AWS EBS GP2, what is the optimal partition alignment?
 Conclusion 4096 Bytes.
 Testing performed with Crystal DiskMark 8.0.4 64-bit in Windows Server 2022 on a t3.medium EC2 instance in US-East-1.
 
-/h2 Analysis
+## Analysis
 | Test                                                 | System <br>Default <br>(MB/s) | 4 KiB <br>(MB/s) | 4000 KiB <br>(MB/s) | 16 KiB <br>(MB/s) | Default <br>(MB/s) | Best <br>(MB/s) | Worst <br>(MB/s) | Delta <br>(%) |
 |------------------------------------------------------|-------------------------------|------------------|---------------------|-------------------|--------------------|-----------------|------------------|---------------|
 | Sequential 1 MiB Read with <br>8 queues & 1 threads  | 137.77                        | 137.39           | 137.72              | 138.81            | 138.18             | 138.81          | 137.39           | 0.01          |
@@ -16,11 +16,11 @@ Testing performed with Crystal DiskMark 8.0.4 64-bit in Windows Server 2022 on a
 | Random 4 KiB Write with <br>32 queues & 1 threads    | 12.6                          | 14.09            | 11.3                | 14.3              | 14.69              | 14.69           | 11.3             | 0.3           |
 | Random 4 KiB Write with <br>1 queues & 1 threads     | 4.1                           | 7.18             | 5.89                | 6.39              | 6.88               | 7.18            | 4.1              | 0.75          |
 
-/h2 Default System Drive
+## Default System Drive
 - MBR
 - 1048576 B Offset
 
-/h2 Test 1
+## Test 1
 - GPT
 - 4 KiB alignment
     ```powershell
@@ -28,7 +28,7 @@ Testing performed with Crystal DiskMark 8.0.4 64-bit in Windows Server 2022 on a
     ```
 - 16777216 B offset
 
-/h2 Test 2
+## Test 2
 - GPT
 - 4000 KiB alignment
     ```powershell
@@ -36,7 +36,7 @@ Testing performed with Crystal DiskMark 8.0.4 64-bit in Windows Server 2022 on a
     ```
 - 20480000 B offset
 
-/h2 Test 3
+## Test 3
 - GPT
 - 16 KiB alignment
     ```powershell
@@ -44,7 +44,7 @@ Testing performed with Crystal DiskMark 8.0.4 64-bit in Windows Server 2022 on a
     ```
 - 16777216 B offset
 
-/h2 Test 4
+## Test 4
 - GPT
 - Default alignment
     ```powershell
