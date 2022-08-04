@@ -31,7 +31,7 @@ Microsoft's Active Directory (AD) has been a common solution for decades, and ev
 ## Monitoring
 
 | Core Feature | Supporting Sources | Examples |
-| - | - | - |
+|:---:|:---:|:---:|
 | Store & Index Object Information | Computers & Users, Domain Controllers, Groups & Members, Organizational Units | Quantities of objects, including normal distribution; Rate of change in objects, including normal distribution; Replication status, including last success; Backup status, including last validation |
 | Domain Name System & Service Lookup | Domain Controllers, Domain Name System, Service Principal Names, Sites & Subnets | Ability to resolve Domain Controllers, Global Catalogs, etc.; Status of domain integrated zones, including duplicate records; Consistency in root hints, forwarders, etc.; Validate dynamic registration of SRV records |
 | Central Authentication & Authorization | Computers & Users, Domain Controllers, Groups & Members, Service Principal Names | Kerberos, NTLM, LDAP authentications/binds over time; LSASS, ATQ, etc. utilization over time; Last successful authentication, including normal distribution; Max token size, SPN duplication, authentication errors, etc. |
