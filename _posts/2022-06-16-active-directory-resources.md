@@ -29,6 +29,7 @@ Microsoft's Active Directory (AD) has been a common solution for decades, and ev
 - @NerdPyle - https://twitter.com/NerdPyle
 
 ## Monitoring
+
 | Core Feature | Supporting Sources | Examples |
 | - | - | - |
 | Store & Index Object Information | Computers & Users, Domain Controllers, Groups & Members, Organizational Units | Quantities of objects, including normal distribution; Rate of change in objects, including normal distribution; Replication status, including last success; Backup status, including last validation |
