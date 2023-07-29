@@ -33,7 +33,7 @@ Your experience setting up Azure Arc should be painless.
 
 Within your Azure Subscription, identify an existing Azure Resource Group (RG) or create a new RG that your Azure Arc machines will reside in. Make sure you note the region you use as well.
 
-[img]
+![image](https://github.com/Snozzberries/snozzberries.github.io/assets/431932/99bf56fc-1170-4267-85ad-955045d29d2d)
 
 Azure Resource Group “Arc” within the Azure Portal.
 
@@ -56,7 +56,7 @@ Connect-AzConnectedMachine  -ResourceGroupName Arc -Name $env:COMPUTERNAME -Loca
 Now you can just append the `-Identity` property to your connect cmdlets and you will authenticate with your managed identity.
 
 ```powershell
-> Connect-AzAccount -Identity
+Connect-AzAccount -Identity
 ```
 
 You will find that your managed identity does not have any subscription when it connects though.
