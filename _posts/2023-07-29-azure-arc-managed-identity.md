@@ -129,6 +129,8 @@ Connect-MgGraph -Identity
 Get-MgContext
 ```
 
+You may even want to start by using a managed identity with the [https://learn.microsoft.com/en-us/powershell/exchange/connect-exo-powershell-managed-identity](Exchange Online PowerShell Module).
+
 ## Security thoughts
 
 As you look to use managed identities to simplify your operational environment, please be mindful that often the log events for any access will only show the managed identity service principal as the client. Meaning if you allow interactive access to an instance with a managed identity, you need to correlate the local systems security logs with the API authentication logs to see who the real identity is interacting with the API as the managed identity.
