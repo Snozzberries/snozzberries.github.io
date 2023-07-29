@@ -6,13 +6,17 @@ Managed identities can provide many benefits and can be even considered a modern
 
 Now you can see an example of using this concept with four modern enhancements.
 
-* You can use Managed Identities anywhere with Azure Arc
-* You can use them:
-  * with the Az PowerShell modules
-  * to obtain bearer tokens
-  * with the Microsoft Graph PowerShell modules
+Contents:
+* [Prerequisites](#pre)
+* [Setup Azure Arc](#setup)
+  * [Identify an Azure Resource Group](#id)
+  * [Setup Arc](#arc)
+  * [Use your machine's identity](#mi)
+  * [Use your machine's identity token](#mib)
+  * [Use your machine's identity with the Graph API](#mig)
+* [Security Thoughts](#sec)
 
-## Prerequisites
+## Prerequisites <a name="pre"></a>
 
 You will need six pieces to make this come together:
 
@@ -25,11 +29,11 @@ You will need six pieces to make this come together:
 
 > The [Azure Arc Connected Machine Agent supports operating system environments](https://learn.microsoft.com/en-us/azure/azure-arc/servers/prerequisites#supported-operating-systems) other than Windows Server as well.
 
-## Setup Azure Arc
+## Setup Azure Arc <a name="setup"></a>
 
 Your experience setting up Azure Arc should be painless.
 
-### Identify an Azure Resource Group
+### Identify an Azure Resource Group <a name="id"></a>
 
 Within your Azure Subscription, identify an existing Azure Resource Group (RG) or create a new RG that your Azure Arc machines will reside in. Make sure you note the region you use as well.
 
@@ -37,7 +41,7 @@ Within your Azure Subscription, identify an existing Azure Resource Group (RG) o
 
 > Azure Resource Group “Arc” within the Azure Portal.
 
-### Setup Arc
+### Setup Arc <a name="arc"></a>
 
 Once you have an RG the machine will reside in. Open PowerShell on your instance and install the necessary modules, connect to Azure, and then connect the machine. You can see these commands shown below. You can replace `Arc` with your RG name, `$env:COMPUTERNAME` with a resource name you prefer, or `eastus` with another Azure Region.
 
@@ -51,7 +55,7 @@ Connect-AzConnectedMachine  -ResourceGroupName Arc -Name $env:COMPUTERNAME -Loca
 
 > Depending on how you want to use your identity, it is worth taking note that the `Connect-AzConnectedMachine` cmdlet creates the `IDENTITY_ENDPOINT` machine environment variable. Meaning you may need to start a new PowerShell session, reboot, or manually set the environment variable equal to `[System.Environment]::GetEnvironmentVariable("IDENTITY_ENDPOINT","Machine")` for the following sections to work.
 
-### Use your machine's identity
+### Use your machine's identity <a name="mi"></a>
 
 Now you can just append the `-Identity` property to your connect cmdlets and you will authenticate with your managed identity.
 
@@ -88,7 +92,7 @@ Once you add your managed identity to an Azure Role Assignment you can connect a
 
 > If you make role assignments to multiple subscriptions ensure you set the appropriate subscription you want the Az cmdlets to use with `Set-AzContext`.
 
-### Use your machine's identity token
+### Use your machine's identity token <a name="mib"></a>
 
 You can also request a bearer token from the Azure Arc IMDS that you can then use with direct API calls. [Microsoft's documentation](https://learn.microsoft.com/en-us/azure/azure-arc/servers/managed-identity-authentication#acquiring-an-access-token-using-rest-api) provides a Windows PowerShell example. The following is a PowerShell Core example.
 
@@ -119,7 +123,9 @@ if ($response)
 }
 ```
 
-### Use your machine's identity with the Graph API
+> You should treat bearer tokens as secrets. Be cautious with how you store, transfer, and use them.
+
+### Use your machine's identity with the Graph API <a name="mig"></a>
 
 Another use case that comes up is working with the Microsoft Graph API. The `Connect-MgGraph` cmdlet also supports managed identity authentication though. As simple as before, you can use your Azure Arc Connected Machine's Managed Identity.
 
@@ -131,7 +137,7 @@ Get-MgContext
 
 You may even want to start by using a managed identity with the [https://learn.microsoft.com/en-us/powershell/exchange/connect-exo-powershell-managed-identity](Exchange Online PowerShell Module).
 
-## Security thoughts
+## Security thoughts <a name="sec"></a>
 
 As you look to use managed identities to simplify your operational environment, please be mindful that often the log events for any access will only show the managed identity service principal as the client. Meaning if you allow interactive access to an instance with a managed identity, you need to correlate the local systems security logs with the API authentication logs to see who the real identity is interacting with the API as the managed identity.
 
