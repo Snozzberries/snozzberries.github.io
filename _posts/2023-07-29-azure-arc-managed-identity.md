@@ -35,7 +35,7 @@ Within your Azure Subscription, identify an existing Azure Resource Group (RG) o
 
 ![image](https://github.com/Snozzberries/snozzberries.github.io/assets/431932/99bf56fc-1170-4267-85ad-955045d29d2d)
 
-Azure Resource Group “Arc” within the Azure Portal.
+> Azure Resource Group “Arc” within the Azure Portal.
 
 ### Setup Arc
 
