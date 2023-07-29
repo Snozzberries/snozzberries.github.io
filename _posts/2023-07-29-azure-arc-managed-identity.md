@@ -14,7 +14,7 @@ Contents:
   * [Use your machine's identity](#mi)
   * [Use your machine's identity token](#mib)
   * [Use your machine's identity with the Graph API](#mig)
-* [Security Thoughts](#sec)
+* [Security thoughts](#sec)
 
 ## Prerequisites <a name="pre"></a>
 
