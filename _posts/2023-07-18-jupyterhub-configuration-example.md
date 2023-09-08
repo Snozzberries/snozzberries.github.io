@@ -1,6 +1,6 @@
 # JupyterHub Configuration Example
 
-With running JupyterHub there are many configuration combinations you may choose to use. You will learn about a few common configurations that could valuable for your configurations.
+With running JupyterHub there are many configuration combinations you may choose to use. Below you will learn about a few common configurations that could be valuable for your configurations.
 
 - AWS Fargate Spawner
 - Named Servers with API Service
