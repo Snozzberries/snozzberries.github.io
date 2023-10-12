@@ -65,7 +65,7 @@ You can now use [Putty](https://www.chiark.greenend.org.uk/~sgtatham/putty/lates
 
 > You will not be able to use PowerShell Remoting with `Enter-PsSession` at this point. 
 
-You will set the default prompt to PowerShell Core using the `New-ItemPropert` commandlet to set the `DefaultShell` value of the `OpenSSH` key within the `HKEY_LOCAL_MACHINE\SOFTWARE` hive registry path. The `data` within the key's value is the path to the PowerShell Core executable using the short filename path (i.e., 8.3 filename). The value of `c:/progra~1/powershell/7/pwsh.exe` is the default location. Then you will need to restart the SSH service.
+You will set the default prompt to PowerShell Core using the `New-ItemPropery` commandlet to set the `DefaultShell` value of the `OpenSSH` key within the `HKEY_LOCAL_MACHINE\SOFTWARE` hive registry path. The `data` within the key's value is the path to the PowerShell Core executable using the short filename path (i.e., 8.3 filename). The value of `c:/progra~1/powershell/7/pwsh.exe` is the default location. Then you will need to restart the SSH service.
 
 When you next connect you will see your PowerShell Core prompt.
 
