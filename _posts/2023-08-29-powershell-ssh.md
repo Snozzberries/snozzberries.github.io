@@ -38,7 +38,7 @@ Get-WindowsCapability -Online|?{$_.Name -like "OpenSSH.Server*"}|Add-WindowsCapa
 
 Now that you installed the OpenSSH Server. You will want to start it and make sure it is able to run.
 
-Use `Start-Server sshd` to turn on the server and then `Test-NetConnection localhost -Port 22` to see if the server is listening on the default SSH port.
+Use `Start-Service sshd` to turn on the server and then `Test-NetConnection localhost -Port 22` to see if the server is listening on the default SSH port.
 
 ```powershell
 Start-Service sshd
